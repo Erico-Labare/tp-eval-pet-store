@@ -2,7 +2,9 @@ package entitie;
 
 import enumPack.ProdType;
 import jakarta.persistence.*;
+
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Classe charactérisant des produits, format JPA POJO pour créer une table "product" dans la base de données
@@ -40,18 +42,24 @@ public class Product implements Serializable {
     private double price;
 
     /**
-    *Constructeur vide pour que la classe soit POJO
+     * Liaison Many to Many avec la table "pet_store" représentée dans la classe Product
+     */
+    @ManyToMany(mappedBy = "products")
+    private Set<PetStore> petStores;
+
+    /**
+     *Constructeur vide pour que la classe soit POJO
      */
     public Product() {
     }
 
     /**
      * Constructeur
-     * @param id
-     * @param code
-     * @param label
-     * @param type
-     * @param price
+     * @param id id
+     * @param code code
+     * @param label label
+     * @param type type
+     * @param price price
      */
     public Product(Long id, String code, String label, ProdType type, double price) {
         this.id = id;
@@ -130,4 +138,19 @@ public class Product implements Serializable {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    /** Getter
+     *@return petStores
+     */
+    public Set<PetStore> getPetStores() {
+        return petStores;
+    }
+
+    /** Setter
+     *@param petStores petStores
+     */
+    public void setPetStores(Set<PetStore> petStores) {
+        this.petStores = petStores;
+    }
 }
+

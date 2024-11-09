@@ -1,7 +1,9 @@
 package entitie;
 
 import jakarta.persistence.*;
+
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Classe charactérisant le magasin, format JPA POJO pour créer une table "pet_store" dans la base de données
@@ -28,6 +30,28 @@ public class PetStore implements Serializable {
     private String managerName;
 
     /**
+     * Liaison One to Many avec la table "animal" représentée dans la classe Animal
+     */
+    @OneToMany(mappedBy = "petStore", cascade = CascadeType.ALL)
+    private Set<Animal> animals;
+
+    /**
+     * Liaison Many to Many avec la table "product" représentée dans la classe Product
+     */
+    @ManyToMany
+    @JoinTable(
+            name = "STORE_PROD",
+            joinColumns = @JoinColumn(name = "ID_STORE", referencedColumnName = "ID"),
+            inverseJoinColumns = @JoinColumn(name = "ID_PROD", referencedColumnName = "ID"))
+    private Set<Product> products;
+
+    /**
+     * Liaison One to One avec la table "adresse" représentée dans la classe Adresse
+     */
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
+
+    /**
      *Constructeur vide pour que la classe soit POJO
      */
     public PetStore() {
@@ -35,9 +59,9 @@ public class PetStore implements Serializable {
 
     /**
      * Constructeur
-     * @param id
-     * @param name
-     * @param managerName
+     * @param id id
+     * @param name name
+     * @param managerName managerName
      */
     public PetStore(Long id, String name, String managerName) {
         this.id = id;
@@ -85,5 +109,47 @@ public class PetStore implements Serializable {
      */
     public void setManagerName(String managerName) {
         this.managerName = managerName;
+    }
+
+    /** Getter
+     *@return animals
+     */
+    public Set<Animal> getAnimals() {
+        return animals;
+    }
+
+    /** Setter
+     *@param animals animals
+     */
+    public void setAnimals(Set<Animal> animals) {
+        this.animals = animals;
+    }
+
+    /** Getter
+     *@return products
+     */
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    /** Setter
+     *@param products products
+     */
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
+
+    /** Getter
+     *@return address
+     */
+    public Address getAddress() {
+        return address;
+    }
+
+    /** Setter
+     *@param address address
+     */
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

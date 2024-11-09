@@ -1,6 +1,7 @@
 package entitie;
 
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -37,10 +38,17 @@ public abstract class Animal implements Serializable {
     }
 
     /**
+     * Liaison Many to One avec la table "pet_store" représentée dans la classe Petstore
+     */
+    @ManyToOne
+    @JoinColumn(name = "ID_PETSTORE")
+    private PetStore petStore;
+
+    /**
      * Constructeur
-     * @param id
-     * @param birth
-     * @param couleur
+     * @param id id
+     * @param birth birth
+     * @param couleur couleur
      */
     public Animal(Long id, Date birth, String couleur) {
         this.id = id;
@@ -88,5 +96,19 @@ public abstract class Animal implements Serializable {
      */
     public void setCouleur(String couleur) {
         this.couleur = couleur;
+    }
+
+    /** Getter
+     *@return petStore
+     */
+    public PetStore getPetStore() {
+        return petStore;
+    }
+
+    /** Setter
+     *@param petStore petStore
+     */
+    public void setPetStore(PetStore petStore) {
+        this.petStore = petStore;
     }
 }
