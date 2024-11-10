@@ -25,9 +25,9 @@ Pour le persistence.xml :
 </persistence>"
 
 - Changez la partie <proprities> pour qu'elle soit utilisable sur votre  machine, soit :
-      - verifiez que la partie "jdbc:mariadb://localhost:3307/" soit renseigné adéquatement pour vous (en fonction de si vous utilisez mariDB, SQL ou autre ; et en fonction de votre port)
-      - remplacez la partie "root" dans "<property name="jakarta.persistence.jdbc.user" value="root"/>" avec votre nom utilisateur d'accès à votre serveur
-      - remplacez la partie "" dans "<property name="jakarta.persistence.jdbc.password" value=""/>" avec votre mot de passe utilisateur d'accès à votre serveur
-      - verifiez que la partie "value="org.mariadb.jdbc.Driver" soit renseigné adéquatement pour vous (en fonction de si vous utilisez mariDB, SQL ou autre)
+  - verifiez que la partie "jdbc:mariadb://localhost:3307/" soit renseigné adéquatement pour vous (en fonction de si vous utilisez mariDB, SQL ou autre ; et en fonction de votre port)
+  - remplacez la partie "root" dans "<property name="jakarta.persistence.jdbc.user" value="root"/>" avec votre nom utilisateur d'accès à votre serveur
+  - remplacez la partie "" dans "<property name="jakarta.persistence.jdbc.password" value=""/>" avec votre mot de passe utilisateur d'accès à votre serveur
+  - verifiez que la partie "value="org.mariadb.jdbc.Driver" soit renseigné adéquatement pour vous (en fonction de si vous utilisez mariDB, SQL ou autre)
   
 ------------------------------------
