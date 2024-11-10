@@ -47,39 +47,16 @@ public class Address implements Serializable {
 
     /**
      * Constructeur
-     * @param id
-     * @param number
-     * @param street
-     * @param zipCode
-     * @param city
+     * @param number number
+     * @param street street
+     * @param zipCode zipCode
+     * @param city city
      */
-    public Address(Long id, String number, String street, String zipCode, String city) {
-        this.id = id;
+    public Address(String number, String street, String zipCode, String city) {
         this.number = number;
         this.street = street;
         this.zipCode = zipCode;
         this.city = city;
-    }
-
-    /** Getter
-     *@return id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /** Setter
-     *@param id id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /** Getter
-     *@return number
-     */
-    public String getNumber() {
-        return number;
     }
 
     /** Setter
@@ -89,13 +66,6 @@ public class Address implements Serializable {
         this.number = number;
     }
 
-    /** Getter
-     *@return street
-     */
-    public String getStreet() {
-        return street;
-    }
-
     /** Setter
      *@param street street
      */
@@ -103,25 +73,11 @@ public class Address implements Serializable {
         this.street = street;
     }
 
-    /** Getter
-     *@return zipCode
-     */
-    public String getZipCode() {
-        return zipCode;
-    }
-
     /** Setter
      *@param zipCode zipCode
      */
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
-    }
-
-    /** Getter
-     *@return city
-     */
-    public String getCity() {
-        return city;
     }
 
     /** Setter

@@ -26,22 +26,16 @@ public class Fish extends Animal implements Serializable {
     }
 
     /**
-     * Constructeur
-     * @param id
-     * @param birth
-     * @param couleur
-     * @param livingEnv
+     *
+     * @param id id
+     * @param birth birth
+     * @param couleur couleur
+     * @param petStore petStore
+     * @param livingEnv livingEnv
      */
-    public Fish(Long id, Date birth, String couleur, FishLivEnv livingEnv) {
-        super(id, birth, couleur);
+    public Fish(Long id, Date birth, String couleur, PetStore petStore, FishLivEnv livingEnv) {
+        super(id, birth, couleur, petStore);
         this.livingEnv = livingEnv;
-    }
-
-    /** Getter
-     *@return livingEnv
-     */
-    public FishLivEnv getLivingEnv() {
-        return livingEnv;
     }
 
     /** Setter

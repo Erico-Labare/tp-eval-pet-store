@@ -57,37 +57,19 @@ public class PetStore implements Serializable {
     public PetStore() {
     }
 
+
     /**
      * Constructeur
-     * @param id id
      * @param name name
      * @param managerName managerName
+     * @param products products
+     * @param address address
      */
-    public PetStore(Long id, String name, String managerName) {
-        this.id = id;
+    public PetStore(String name, String managerName, Set<Product> products, Address address) {
         this.name = name;
         this.managerName = managerName;
-    }
-
-    /** Getter
-     *@return id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /** Setter
-     *@param id id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /** Getter
-     *@return name
-     */
-    public String getName() {
-        return name;
+        this.products = products;
+        this.address = address;
     }
 
     /** Setter
@@ -97,13 +79,6 @@ public class PetStore implements Serializable {
         this.name = name;
     }
 
-    /** Getter
-     *@return managerName
-     */
-    public String getManagerName() {
-        return managerName;
-    }
-
     /** Setter
      *@param managerName managerName
      */
@@ -111,39 +86,11 @@ public class PetStore implements Serializable {
         this.managerName = managerName;
     }
 
-    /** Getter
-     *@return animals
-     */
-    public Set<Animal> getAnimals() {
-        return animals;
-    }
-
-    /** Setter
-     *@param animals animals
-     */
-    public void setAnimals(Set<Animal> animals) {
-        this.animals = animals;
-    }
-
-    /** Getter
-     *@return products
-     */
-    public Set<Product> getProducts() {
-        return products;
-    }
-
     /** Setter
      *@param products products
      */
     public void setProducts(Set<Product> products) {
         this.products = products;
-    }
-
-    /** Getter
-     *@return address
-     */
-    public Address getAddress() {
-        return address;
     }
 
     /** Setter

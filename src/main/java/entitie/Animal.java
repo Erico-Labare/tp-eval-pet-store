@@ -49,11 +49,13 @@ public abstract class Animal implements Serializable {
      * @param id id
      * @param birth birth
      * @param couleur couleur
+     * @param petStore petStore
      */
-    public Animal(Long id, Date birth, String couleur) {
+    public Animal(Long id, Date birth, String couleur, PetStore petStore) {
         this.id = id;
         this.birth = birth;
         this.couleur = couleur;
+        this.petStore=petStore;
     }
 
     /** Getter
@@ -64,31 +66,10 @@ public abstract class Animal implements Serializable {
     }
 
     /** Setter
-     *@param id id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /** Getter
-     *@return birth
-     */
-    public Date getBirth() {
-        return birth;
-    }
-
-    /** Setter
      *@param birth birth
      */
     public void setBirth(Date birth) {
         this.birth = birth;
-    }
-
-    /** Getter
-     *@return couleur
-     */
-    public String getCouleur() {
-        return couleur;
     }
 
     /** Setter
@@ -96,13 +77,6 @@ public abstract class Animal implements Serializable {
      */
     public void setCouleur(String couleur) {
         this.couleur = couleur;
-    }
-
-    /** Getter
-     *@return petStore
-     */
-    public PetStore getPetStore() {
-        return petStore;
     }
 
     /** Setter

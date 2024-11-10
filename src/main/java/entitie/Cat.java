@@ -27,22 +27,16 @@ public class Cat extends Animal implements Serializable {
     }
 
     /**
-     * Constructeur
-     * @param id
-     * @param birth
-     * @param couleur
-     * @param chipId
+     *
+     * @param id id
+     * @param birth birth
+     * @param couleur couleur
+     * @param petStore petStore
+     * @param chipId chipId
      */
-    public Cat(Long id, Date birth, String couleur, String chipId) {
-        super(id, birth, couleur);
+    public Cat(Long id, Date birth, String couleur, PetStore petStore, String chipId) {
+        super(id, birth, couleur, petStore);
         this.chipId = chipId;
-    }
-
-    /** Getter
-     *@return chipId
-     */
-    public String getChipId() {
-        return chipId;
     }
 
     /** Setter

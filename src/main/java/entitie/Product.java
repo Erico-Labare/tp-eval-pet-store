@@ -55,39 +55,16 @@ public class Product implements Serializable {
 
     /**
      * Constructeur
-     * @param id id
      * @param code code
      * @param label label
      * @param type type
      * @param price price
      */
-    public Product(Long id, String code, String label, ProdType type, double price) {
-        this.id = id;
+    public Product(String code, String label, ProdType type, double price) {
         this.code = code;
         this.label = label;
         this.type = type;
         this.price = price;
-    }
-
-    /** Getter
-     *@return id
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /** Setter
-     *@param id id
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /** Getter
-     *@return code
-     */
-    public String getCode() {
-        return code;
     }
 
     /** Setter
@@ -97,25 +74,11 @@ public class Product implements Serializable {
         this.code = code;
     }
 
-    /** Getter
-     *@return label
-     */
-    public String getLabel() {
-        return label;
-    }
-
     /** Setter
      *@param label label
      */
     public void setLabel(String label) {
         this.label = label;
-    }
-
-    /** Getter
-     *@return type
-     */
-    public ProdType getType() {
-        return type;
     }
 
     /** Setter
@@ -125,32 +88,11 @@ public class Product implements Serializable {
         this.type = type;
     }
 
-    /** Getter
-     *@return price
-     */
-    public double getPrice() {
-        return price;
-    }
-
     /** Setter
      *@param price price
      */
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    /** Getter
-     *@return petStores
-     */
-    public Set<PetStore> getPetStores() {
-        return petStores;
-    }
-
-    /** Setter
-     *@param petStores petStores
-     */
-    public void setPetStores(Set<PetStore> petStores) {
-        this.petStores = petStores;
     }
 }
 
